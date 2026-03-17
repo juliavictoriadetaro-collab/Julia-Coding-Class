@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>L02 My School's Webpage</title>
+        </head>
+        <body>
+            <h1><b>Introduction To My School</b></h1>
+            <b><i> My School is St.Mary's Catholic High School. It is located near Oud Metha
+                 Metro Station in Dubai. They include facilities like the Church, Basketball Court,
+                  Volleyball Court, Football Court, Main Hall and Mini Hall. From grade 9, students
+                   get to choose their own subjects from Biology or Accounts, Chemistry or Economics, 
+                   Physics Or Business and ICT or Computer Science. The school welcomes people coming
+                   from different countries and ensures and healthy and safe learning enviroment. </i></b>
+        </body>
+</html>
