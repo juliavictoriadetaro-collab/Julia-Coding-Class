@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L10 HW My Ice Cream Shop Menu</title>
+
+        <style>
+            body {
+                font-family:'Times New Roman', Times, serif;
+                background: bisque;
+                padding: 30px;
+                text-align: center;
+            }
+            
+            h1 { color: burlywood; }
+            
+            /* Sibling Selector - styles the paragraph right after h1 */
+            h1, p {
+                background:tan;
+                padding: 10px 20px;
+                border-radius: 8px;
+                color:darkolivegreen;
+                display:inline-block;
+            }
+
+            ul { padding:0; margin-top:20px; }
+            
+            /*child selector - styles only direct li children of ul */
+            u1 > li {
+                list-style:none;
+                font: size 18px;
+                font-weight:bold;
+                color: black;
+                padding: 10px 20px;
+                margin: 6px auto;
+                width: 260px;
+                background: turquoise;
+                border: radius 8px;
+            }
+
+            /*:nth-child - highlights the third item as Chef's Special */
+            ul li:nth-child(3) {
+                background: lavender;
+                color: blue;
+            }
+
+        </style>
+    </head>
+    <body>
+         <h1>My Food Menu</h1>  
+        <p>Pick your favorite flavour and dig in!</p>
+
+        <ul>
+            <li>Chocolate</li>
+            <li>Strawberry Cheesecake</li>
+            <li>Cotton Candy - Chef's Special</li>
+            <li>Mango</li>
+            <li>Kiwi</li>
+        </ul>
+         
+        <div class="links">
+            <a href="#">Order Now<a/>
+            <a href="#">See More<a/>
+        </div>   
+    </body>
+</html>
