@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L12 HW Zoo Rescue Tracker</title>
+
+        <!--Internal CSS-->
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: lightgreen;
+                padding: 65px 30px 30px 30px;
+                min-height: 1800px;
+            }
+
+            h1, h2 { color: green; }
+
+            .top-bar { 
+                position:fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background-color: green;
+                color: lightgoldenrodyellow;
+                padding: 14px 20px;
+            }
+
+            .list-item {
+                background-color: lightgoldenrodyellow;
+                border: 2px solid, green;
+                padding: 10px, 20px;
+                margin: 5px 0;
+            }
+
+            .special-note {
+                position: relative;
+                left: 30px;
+                background-color:greenyellow;
+                padding: 10px 20px;
+            }
+
+            .pet-card {
+                position: relative;
+                background-color: lightgoldenrodyellow;
+                border: 3px solid green;
+                padding: 15px 25px;
+            }
+
+            .badge {
+                position: absolute; 
+                top: 8px;
+                right: 8px;
+                background-color: forestgreen;
+                color: white;
+                padding: 4px 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top-bar">Wildlife Warriors - Zoo Rescue Tracker</div>
+        </h1>Rescuing Wildlife in Need<h1>
+
+        <h2>Static</h2>
+        <div class="list-item">Wildlife emergency calls = 37,000+</div>
+        <div class="list-item">Pet Attack = 16%</div>
+
+        <h2>Relative</h2>
+        <p>This note shifts right from its normal spot.</p>
+        <div class="special-note">Wildlife in Need!</div>
+
+        <h2>Absolute</h2>
+        <p>This badge is pinned to the conrer of the card</p>
+        <div class="pet-card">
+            <p>Man-made world expands, wildlife face threats every day. In order to find food, new habitat or a mate for breeding season, many animals must cross busy roads, encounter domestic animals or escape from unusual locations.</p>
+        </div>
+
+        <h2>Sticky</h2>
+        <p>Scroll down - the label locks at the top!</p>
+        <div class="section-label">Related Links</div>
+        <div class="list-item">News From the Field</div>
+        <div class="list-item">Wildlife in Oregon</div>
+        <div class="list-item">Crocodile Research</div>
+    </body>
+</html>
