@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L16 HW My Study Progress Dashboard</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <style>
+            body {
+                background-color: lightgoldenrodyellow;
+                font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+            .jumbotron {
+                background-color: lightgoldenrodyellow;
+                border-left: 6px solid olivedrab;
+                margin-bottom: 25px;
+            }
+
+            .jumbotron h1 {
+                color: olivedrab;
+            }
+
+            .section-title {
+                color: olivedrab;
+                margin-top: 30px;
+                margin-bottom: 15px;
+            }
+
+            p {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- TOPIC 1: JUMBOTRON -->
+         <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1>My Study Progress Dashboard</h1>
+
+                <p class="lead">
+                    Welcome to the lab! Here are the work running, the discoveries made, and how much progress each study work has come.
+                </p>
+
+                <!-- TOPIC 2: BUTTONS -->
+                 <button class="btn btn-primary">Maths</button>
+                 <button class="btn btn-success">Science</button>
+                 <button class="btn btn-warning">Moral Values</button>
+                 <button class="btn btn-danger">Activity</button>
+            </div>
+         </div>
+
+         <div class="container">
+            <!-- TOPIC 3: BADGES -->
+             <h2 class="section-title">
+                Experiments Completed <span class="badge badge-danger">4</span>
+             </h2>
+
+             <p>Maths <span class="badge badge-primary">7 homework</span></p>
+             <p>Science <span class="badge badge-success">5 experiments</span></p>
+             <p>Moral Values <span class="badge badge-warning">3 practicals</span></p>
+             <p>Sports <span class="badge badge-info">4 exercises</span></p>
+
+             <!-- TOPIC 4: PROGRESS BARS -->
+              <h2 class="section-title">Research Progress</h2>
+
+              <p>Maths</p>
+              <div class="progress mb-3">
+                <div class="progress-bar bg-primary" style="width: 85%;">85%</div>
+              </div>
+
+              <p>Science</p>
+              <div class="progress mb-3">
+                <div class="progress-bar bg-success" style="width: 70%;">70%</div>
+              </div>
+
+              <p>Moral Values</p>
+              <div class="progress mb-3">
+                <div class="progress-bar bg-warning" style="width: 55%;">55%</div>
+              </div>
+
+              <p>Sports</p>
+              <div class="progress mb-3">
+                <div class="progress-bar bg-danger" style="width: 40%;">40%</div>
+              </div>
+         </div>
+
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>
+</html>
