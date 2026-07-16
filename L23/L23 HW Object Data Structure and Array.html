@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L23 HW Object Data Structure and Array</title>
+    </head>
+    <body>
+        <script>
+        var student = {
+            name: 'Julia',
+            age: '13',
+            Grade: '10',
+            hobbies: 'Painting',
+            fav_sport: 'Volleyball'
+        };
+
+        var color = ["white", "black", "red", "green", "blue"];
+        document.write("Student name is : " + student.name, "<br>","Student favorite sport is : " + student.fav_sport);
+
+        document.write("<br><br>");
+
+        document.write("Before Poping the colors are: " + color.join(" - "));
+        document.write("<br>");
+        document.write("My favorite color is : " + color[4]);
+        document.write("<br><br>");
+        color.pop();
+        document.write("After Poping the colors are : " + color.join(" - "));
+        </script>
+    </body>
+</html>
