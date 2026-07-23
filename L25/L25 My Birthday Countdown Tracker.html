@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L25 Birthday Countdown Checker</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: lightcoral;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: darkgreen;
+        }
+
+        button {
+            background: darkgreen;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        div {
+            border: 1px solid darkgreen;
+            width: 320px;
+            margin: 6px auto;
+            padding: 8px 12px;
+            text-align: left;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Birthday Countdown Checker</h1>
+    <button onclick="checkBirthday()">Check Birthday</button>
+
+    <div>Name: <span id="name"></span></div>
+    <div>Birthday: <span id="birthday"></span></div>
+    <div>Today's Date: <span id="today"></span></div>
+    <div>Days Left: <span id="days"></span></div>
+    <div>Message: <span id="message"></span></div>
+    <div>Countdown Review: <span id="review"></span></div>
+    <div>Stars: <span id="stars"></span></div>
+    <div>Birthday Passed: <span id="passed"></span></div>
+
+    <script>
+        function checkBirthday() {
+            // Variables
+            let name = "Julia";
+            let birthMonth = 10;
+            let birthDay = 10;
+
+            // Date Object
+            let today = new Date();
+            let todayDate = today.getDate();
+            let todayMonth = today.getMonth() + 1;
+
+            // Days Left
+            let daysLeft = birthDay - todayDate;
+
+            // Comparison Operator
+            let birthdayPassed = todayMonth > birthMonth;
+
+            // If / Else
+            let message;
+
+            if (todayMonth == birthMonth && todayDate == birthDay) {
+                message = "Happy Birthday!";
+                daysLeft = 0;
+            }
+            else if (todayMonth == birthMonth && daysLeft > 0) {
+                message = "Your birthday is almost here!";
+            }
+            else if (birthdayPassed) {
+                message = "Your birthday has already passed this year.";
+                daysLeft = 0;
+            }
+            else {
+                message = "Plenty of time until your birthday.";
+                if (daysLeft < 0) {
+                    daysLeft = 0;
+                }
+            }
+
+            // While Loop
+            let stars = "";
+            let count = 0;
+
+            while (count < 5) {
+                stars = stars + "* ";
+                count = count + 1;
+            }
+
+            // String Concatenation
+            let review = "There are " + daysLeft + " day(s) left until your birthday.";
+
+            // Display Results
+            document.getElementById("name").innerHTML = name;
+            document.getElementById("birthday").innerHTML = "October 10";
+            document.getElementById("today").innerHTML = todayMonth + "/" + todayDate;
+            document.getElementById("days").innerHTML = daysLeft;
+            document.getElementById("message").innerHTML = message;
+            document.getElementById("review").innerHTML = review;
+            document.getElementById("stars").innerHTML = stars;
+            document.getElementById("passed").innerHTML = birthdayPassed;
+        }
+    </script>
+</body>
+</html>
