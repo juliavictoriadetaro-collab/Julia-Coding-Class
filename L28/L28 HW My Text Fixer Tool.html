@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L28 HW My Text Fixer Tool</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <style>
+            body {
+                background: beige;
+            }
+
+            h1, h3 {
+                color: lightseagreen;
+            }
+
+            .box {
+                background: white;
+                color: lightseagreen;
+             }
+        </style>
+    </head>
+    <body>
+        <div class="container py-4">
+            <h1 class="mb-1">My Text Fixer Tool</h1>
+            <p class="text-muted mb-4">Practice checking types, converting values, replacing words, and handling errors!</p>
+
+            <!-- TOPIC 1: typeof -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">Check the Data Type</h3>
+
+                    <button class="btn btn-warning" onclick="checkTypes()">Show the Types!</button>
+
+                    <div id="typeResult" class="box p-3 mt-3 rounded">Click the button to display the data types!</div>
+                </div>
+            </div>
+
+            <!-- TOPIC 2: String() and Number() -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">Convert the Type</h3>
+
+                    <input id="numIn" class="form-control mb-2" placeholder="Enter any number (Example:42)">
+
+                    <button class="btn btn-warning mr-2" onclick="toStr()">Convert to String</button>
+                    <button class="btn btn-warning" onclick="toNum()">Convert to Number</button>
+
+                    <div id="convResult" class="box p-3 mt-3 rounded">Enter a value above and choose a conversion!</div>
+                </div>
+            </div>
+
+            <!-- TOPIC 3: search() and replace() -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">Search and Replace a Word</h3>
+
+                    <input id="findW" class="form-control mb-2" placeholder="Word to search (Example:wizard)">
+                    <input id="swapW" class="form-control mb-2" placeholder="Replace it with (Example:dragon)">
+
+                    <button class="btn btn-warning mr-2" onclick="doSearch()">Search</button>
+                    <button class="btn btn-warning" onclick="doReplace()">Replace</button>
+
+                    <div id="srResult" class="box p-3 mt-3 rounded">Sentence: "The wizard flew over the big castle."</div>
+                </div>
+            </div>
+
+            <!-- TOPIC 4: try/catch -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">Handle the Error</h3>
+                    <input id="divIn" class="form control mb-2" placeholder="Multiply 100 by this - enter a number or another value!">
+
+                    <button class="btn btn-warning" onclick="trySafe()">Check</button>
+
+                    <div id="errResult" class="box p-3 mt-3 rounded">Enter a value and see the result!</div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var sen = "The wizard flew over the big castle.";
+
+            function checkTypes() {
+                document.getElementById("typeResult").innerText = 
+                "Score 42       - type: " + typeof 42 + "\n" +
+                "Name 'Alex'    - type: " + typeof "Alex" + "\n" +
+                "Game over true - type: " + typeof true;
+            }
+
+            function toStr() {
+                var v = document.getElementById("numIn").value;
+
+                document.getElementById("convResult").innerHTML = "String(" + v +") = '" + String(v) + "' - now it is a: " + typeof String(v);
+            }
+
+            function toNum() {
+                var v= document.getElementById("numIn").value;
+
+                document.getElementById("convResult").innerHTML = "Number ('" + v + "') = " + Number(v) + " - now it is a:" + typeof Number(v); 
+            }
+
+            function doSearch() {
+                var w = document.getElementById("findW").value;
+                var p = sen.search(w);
+
+                document.getElementById("srResult").innerHTML = p === -1 ? "'" + w + "' was not found - try another word!" : "The word '" + w + "' starts at position " + p + "!";
+            }
+
+            function doReplace() {
+                var w = document.getElementById("findW").value;
+
+                document.getElementById("srResult").innerHTML = "Updated Sentence: " + sen.replace(w, document.getElementById("swapW").value);
+            }
+
+            function trySafe() {
+                try {
+                    var n = document.getElementById("divIn").value;
+
+                    if (n === "" || isNaN(n)) {
+                        throw "Please enter a valid number!";
+                    }
+
+                    document.getElementById("errResult").innerHTML = "100 * " + n + " = " + (100 * Number(n)) + " - well done!";
+                }
+
+                catch (err) {
+                    document.getElementById("errResult").innerHTML = "Invalid Input: " + err;
+                }
+            }
+        </script>
+    </body>
+</html>
