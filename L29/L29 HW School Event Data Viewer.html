@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L29 HW School Event Date Viewer</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: beige;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: darkolivegreen;
+        }
+
+        button {
+            background: darkolivegreen;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        div {
+            border: 1px solid #ff5a43;
+            width: 280px;
+            margin: 6px auto;
+            padding: 8px 12px;
+            text-align: left;
+            border-radius: 6px;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>School Event Date Viewer</h1>
+
+        <button onclick="saveEvent()">Save Event</button>
+        <button onclick="startEvent()">Start Event</button>
+
+        <div>JSON Text: <span id="json-text"></span></div>
+        <div>Loaded Event: <span id="loaded-event"></span></div>
+        <div>Loaded Price: <span id="loaded-price"></span></div>
+        <div>Status: <span id="status"></span></div>
+        <div>Result: <span id="result"></span></div>
+
+        <script>
+            // JSON - the event stored as a JavaScript object
+            let event = {
+                event: "Awarding Ceremony",
+                price: 100,
+                school: "St. Mary's Catholic High School"
+            };
+
+            // JSON.stringify() and JSON.parse()
+            function saveEvent() {
+                let jsonText = JSON.stringify(event);
+                let loadedEvent = JSON.parse(jsonText);
+
+                document.getElementById("json-text").innerHTML = jsonText;
+                document.getElementById("loaded-event").innerHTML = loadedEvent.event;
+                document.getElementById("loaded-price").innerHTML = "$" + loadedEvent.price;
+            }
+
+            // delay() - wait ms milliseconds - do not change this
+            function delay(ms) {
+                return new Promise(function(resolve) {
+                    setTimeout(resolve, ms);
+                });
+            }
+
+            // async and await - view the event step by step
+            async function startEvent() {
+                document.getElementById("result").innerHTML = "";
+
+                document.getElementById("status").innerHTML = "Event started!";
+
+                setTimeout(function() {
+                    document.getElementById("status").innerHTML = "Event is being viewed...";
+                }, 1000);
+
+                await delay(3000);
+                document.getElementById("status").innerHTML = "Out for viewing!";
+
+                await delay(2000);
+                document.getElementById("result").innerHTML = "Event has begun!";
+            }
+        </script>
+    </body>
+</html>
