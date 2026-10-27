@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 # --- ABSTRACT BASE CLASS (Parent)
 # Animal inherits from ABC - this makes it an abstract class (Abstraction)
 class Animal(ABC):
-    # Parent constructor - stores attributes shared by all animals
+    # Parent constructor - stores attributes sha 
     def __init__(self, nm, hbt):
         self.name = nm
         self.habitat = hbt
